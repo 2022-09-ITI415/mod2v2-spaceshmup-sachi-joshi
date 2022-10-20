@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Enemy_1 extends the Enemy class
 public class Enemy_1 : Enemy {
@@ -14,6 +15,7 @@ public class Enemy_1 : Enemy {
 
     private float x0; // The initial x value of pos
     private float birthTime;
+
 
 	// Use this for initialization
 	void Start()
@@ -44,4 +46,5 @@ public class Enemy_1 : Enemy {
 
         // print (bndCheck.isOnScreen);
     }
+
 }

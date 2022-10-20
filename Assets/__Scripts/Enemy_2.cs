@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_2 : Enemy {
 
@@ -14,6 +15,8 @@ public class Enemy_2 : Enemy {
     public Vector3 p0;
     public Vector3 p1;
     public float birthTime;
+
+
 
     private void Start()
     {
@@ -59,4 +62,7 @@ public class Enemy_2 : Enemy {
         // Interpolate the two linear interpolation points
         pos = ((1 - u) * p0) + (u * p1);
     }
+
 }
+
+

@@ -8,8 +8,8 @@ public class Enemy : MonoBehaviour {
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f; // The speed in m/s
     public float fireRate = 0.3f; // Seconds/shot (Unused)
-    public float health = 10;
-    public int score = 100; // Points earned for destroying this
+    public float health = 7;
+    public int score = 10; // Points earned for destroying this
     public float showDamageDuration = 0.1f; // # seconds to show damage
     public float powerUpDropChance = 1f; // Chance to drop a power-up
 
@@ -19,15 +19,6 @@ public class Enemy : MonoBehaviour {
     public bool showingDamage = false;
     public float damageDoneTime; // Time to stop showing damage
     public bool notifiedOfDestruction = false; // Will be used later
-
-    [Header("Set Dynamically")]
-    public Text scoreGT;
-
-    public Text countText;
-    public Text winText;
-
-    private Rigidbody rb;
-    private int count;
  
 
 
@@ -64,7 +55,7 @@ public class Enemy : MonoBehaviour {
 
         if(showingDamage && Time.time > damageDoneTime)
         {
-            UnShowDamage();
+            //UnShowDamage();
         }
 
         if (bndCheck != null && bndCheck.offDown)
@@ -117,7 +108,6 @@ public class Enemy : MonoBehaviour {
                 print("Enemy hit by non-ProjectileHero: " + otherGO.name);
                 break;
         }
-    }
 
     void ShowDamage()
     {
@@ -138,14 +128,5 @@ public class Enemy : MonoBehaviour {
         showingDamage = false;
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("PickUp"))
-        {
-           other.gameObject.SetActive(false);
-            count = count + 1 ;
-             scoreGT.text = count.ToString();
-            //SetCountText();
-        }
-    }
+}
 }
