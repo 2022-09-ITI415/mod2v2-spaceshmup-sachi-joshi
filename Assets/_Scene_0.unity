@@ -718,8 +718,9 @@ GameObject:
   - component: {fileID: 359234208}
   - component: {fileID: 359234210}
   - component: {fileID: 359234209}
+  - component: {fileID: 359234211}
   m_Layer: 5
-  m_Name: WinText
+  m_Name: HighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,7 +734,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359234207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -25.7}
+  m_LocalPosition: {x: 0, y: 0, z: 11.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -742,7 +743,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270.1, y: -144.3}
+  m_AnchoredPosition: {x: -264.6, y: -140.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359234209
@@ -778,7 +779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Enemies Hit: 0'
+  m_Text: 'High Score: 0'
 --- !u!222 &359234210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -787,6 +788,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359234207}
   m_CullTransparentMesh: 1
+--- !u!114 &359234211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359234207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a57f08a17f3f4b1da76da7221d7878d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &494030671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1336,9 +1349,6 @@ MonoBehaviour:
   - {fileID: 494030672}
   - {fileID: 511470548}
   _shieldLevel: 1
-  scoreGT: {fileID: 0}
-  countText: {fileID: 0}
-  winText: {fileID: 0}
 --- !u!4 &1342965580
 Transform:
   m_ObjectHideFlags: 0
@@ -1413,7 +1423,7 @@ GameObject:
   - component: {fileID: 1631715705}
   - component: {fileID: 1631715704}
   m_Layer: 5
-  m_Name: CountText
+  m_Name: ScoreCounter
   m_TagString: count
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1472,7 +1482,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: 'Your Score: 0'
 --- !u!222 &1631715705
 CanvasRenderer:
   m_ObjectHideFlags: 0

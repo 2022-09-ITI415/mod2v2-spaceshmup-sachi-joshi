@@ -12,13 +12,19 @@ public class Projectile : MonoBehaviour {
     public Rigidbody rigid;
     [SerializeField]
     private WeaponType _type;
+   
     public Text scoreGT;
-
-    public Text countText;
-    public Text winText;
 
     private Rigidbody rb;
     private int count;
+
+
+    void Start()
+    {
+        GameObject scoreGo = GameObject.Find("ScoreCounter");
+        scoreGT = scoreGo.GetComponent<Text>();
+        scoreGT.text = "0";
+    }
 
     // This public property masks the field _type and takes action when it is set
     public WeaponType type
@@ -83,6 +89,8 @@ public class Projectile : MonoBehaviour {
         }
 
     }
+
+
 
     ///<summary>
     /// Sets the _type private field and colors this projectile to match the

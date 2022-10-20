@@ -16,6 +16,8 @@ public class Enemy_2 : Enemy {
     public Vector3 p1;
     public float birthTime;
 
+    public Text scoreGT;
+
 
 
     private void Start()
@@ -54,6 +56,12 @@ public class Enemy_2 : Enemy {
             // This Enemy_2 has finished its life
             Destroy(this.gameObject);
             return;
+
+
+            //int score = int.Parse(scoreGT.text);
+            //score += 10;
+            //scoreGT.text = score.ToString();
+           // }
         }
 
         // Adjust u by adding a U Curve based on a Sine wave
@@ -62,7 +70,7 @@ public class Enemy_2 : Enemy {
         // Interpolate the two linear interpolation points
         pos = ((1 - u) * p0) + (u * p1);
     }
-
 }
+
 
 
