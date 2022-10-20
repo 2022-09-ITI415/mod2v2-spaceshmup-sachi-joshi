@@ -11,6 +11,11 @@ TagManager:
   - PowerUp
   - PowerUpBox
   - score
+  - count
+  - Enemy1
+  - Enemy2
+  - Enemy3
+  - Enemy4
   layers:
   - Default
   - TransparentFX

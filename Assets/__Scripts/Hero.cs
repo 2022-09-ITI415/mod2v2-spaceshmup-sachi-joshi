@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour {
     static public Hero S; // Singleton
@@ -18,6 +19,7 @@ public class Hero : MonoBehaviour {
     [Header("Set Dynamically")]
     [SerializeField]
     public float _shieldLevel = 1;
+
 
     // This variable holds a reference to the last triggering GameObject
     private GameObject lastTriggerGo = null;
@@ -42,6 +44,8 @@ public class Hero : MonoBehaviour {
         // Reset the weapons to start _Hero with 1 blaster
         ClearWeapons();
         weapons[0].SetType(WeaponType.blaster);
+
+        
     }
 	
 	// Update is called once per frame
@@ -96,6 +100,16 @@ public class Hero : MonoBehaviour {
         {
             print("Triggered by non-Enemy: " + go.name);
         }
+
+        //{
+            //if (other.gameObject.CompareTag("Enemy"))
+        //{
+           // other.gameObject.SetActive(false);
+            //SetCountText = count + 5 ;
+           //  scoreGT.text = count.ToString();
+            //SetCountText();
+        //}
+       // }
     }
 
     public void AbsorbPowerUp(GameObject go)
@@ -127,6 +141,7 @@ public class Hero : MonoBehaviour {
         }
         pu.AbsorbedBy(gameObject);
     }
+
 
     public float shieldLevel
     {
