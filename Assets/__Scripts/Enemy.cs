@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
@@ -18,6 +19,17 @@ public class Enemy : MonoBehaviour {
     public bool showingDamage = false;
     public float damageDoneTime; // Time to stop showing damage
     public bool notifiedOfDestruction = false; // Will be used later
+
+    [Header("Set Dynamically")]
+    public Text scoreGT;
+
+    public Text countText;
+    public Text winText;
+
+    private Rigidbody rb;
+    private int count;
+ 
+
 
     protected BoundsCheck bndCheck;
 
@@ -124,5 +136,16 @@ public class Enemy : MonoBehaviour {
             materials[i].color = originalColors[i];
         }
         showingDamage = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+           other.gameObject.SetActive(false);
+            count = count + 1 ;
+             scoreGT.text = count.ToString();
+            //SetCountText();
+        }
     }
 }
