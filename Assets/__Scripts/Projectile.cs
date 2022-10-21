@@ -19,12 +19,6 @@ public class Projectile : MonoBehaviour {
     private int count;
 
 
-    void Start()
-    {
-        GameObject scoreGo = GameObject.Find("ScoreCounter");
-        scoreGT = scoreGo.GetComponent<Text>();
-        scoreGT.text = "0";
-    }
 
     // This public property masks the field _type and takes action when it is set
     public WeaponType type
@@ -53,42 +47,6 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-           other.gameObject.SetActive(false);
-            count = count + 5 ;
-             scoreGT.text = count.ToString();
-            //SetCountText();
-        }
-        if (other.gameObject.CompareTag("Enemy1"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 10 ;
-             scoreGT.text = count.ToString();
-        }
-        if (other.gameObject.CompareTag("Enemy2"))
-        {
-            other.gameObject.SetActive(false);
-            count = count + 15 ;
-             scoreGT.text = count.ToString();
-        }
-        if (other.gameObject.CompareTag("Enemy3"))
-        {
-           other.gameObject.SetActive(false);
-            count = count + 20 ;
-             scoreGT.text = count.ToString(); 
-        }
-        if (other.gameObject.CompareTag("Enemy4"))
-        {
-          other.gameObject.SetActive(false);
-            count = count + 25 ;
-             scoreGT.text = count.ToString();   
-        }
-
-    }
 
 
 

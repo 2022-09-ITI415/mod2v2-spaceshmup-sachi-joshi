@@ -68,7 +68,7 @@ MonoBehaviour:
   speed: 7
   fireRate: 0.3
   health: 15
-  score: 15
+  score: 20
   showDamageDuration: 0.1
   powerUpDropChance: 0.5
   originalColors: []
@@ -81,6 +81,7 @@ MonoBehaviour:
   p0: {x: 0, y: 0, z: 0}
   p1: {x: 0, y: 0, z: 0}
   birthTime: 0
+  scoreGT: {fileID: 0}
 --- !u!114 &114288172205974542
 MonoBehaviour:
   m_ObjectHideFlags: 0

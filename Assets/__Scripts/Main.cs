@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour {
@@ -14,12 +15,20 @@ public class Main : MonoBehaviour {
     public float enemyDefaultPadding = 1.5f; // Padding for position
     public WeaponDefinition[] weaponDefinitions;
     public GameObject prefabPowerUp;
+    public Text scoreText;
     public WeaponType[] powerUpFrequency = new WeaponType[]
     {
         WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield
     };
 
     private BoundsCheck bndCheck;
+
+    void Start()
+    {
+        GameObject scoreGo = GameObject.Find("ScoreCounter");
+        scoreText = scoreGo.GetComponent<Text>();
+        scoreText.text= "0";
+    }
 
     public void ShipDestroyed( Enemy e)
     {
@@ -39,7 +48,23 @@ public class Main : MonoBehaviour {
             // Set it to the position of the destroyed ship
             pu.transform.position = e.transform.position;
         }
+        
+        
+        int tempscore;
+        tempscore = int.Parse(scoreText.text);
+        tempscore = tempscore + e.score;
+        scoreText.text = tempscore.ToString();
+
+        if(tempscore > HighScore.score)
+        HighScore.score = tempscore;
     }
+
+    //private void DisplayScore()
+  //  {
+      //  scoreText.text = newScore.ToString();
+   // }
+    
+    
 
     private void Awake()
     {
@@ -116,3 +141,4 @@ public class Main : MonoBehaviour {
         return new WeaponDefinition();
     }
 }
+
