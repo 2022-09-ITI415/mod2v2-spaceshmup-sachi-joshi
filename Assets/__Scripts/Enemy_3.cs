@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_3 : Enemy { // Enemy_3 extends Enemy
     // Enemy_3 will move following a Bezier curve, which is a linear
@@ -11,6 +12,7 @@ public class Enemy_3 : Enemy { // Enemy_3 extends Enemy
     [Header("Set Dynamically: Enemy_3")]
     public Vector3[] points;
     public float birthTime;
+
 
     private void Start()
     {
@@ -59,4 +61,6 @@ public class Enemy_3 : Enemy { // Enemy_3 extends Enemy
         p12 = ((1 - u) * points[1]) + (u * points[2]);
         pos = ((1 - u) * p01) + (u * p12);
     }
+
+
 }

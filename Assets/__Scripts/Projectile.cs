@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Projectile : MonoBehaviour {
 
@@ -11,6 +12,13 @@ public class Projectile : MonoBehaviour {
     public Rigidbody rigid;
     [SerializeField]
     private WeaponType _type;
+   
+    public Text scoreGT;
+
+    private Rigidbody rb;
+    private int count;
+
+
 
     // This public property masks the field _type and takes action when it is set
     public WeaponType type
@@ -38,6 +46,9 @@ public class Projectile : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+
+
 
     ///<summary>
     /// Sets the _type private field and colors this projectile to match the

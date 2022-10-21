@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f; // The speed in m/s
     public float fireRate = 0.3f; // Seconds/shot (Unused)
-    public float health = 10;
-    public int score = 100; // Points earned for destroying this
+    public float health = 7;
+    public int score = 10; // Points earned for destroying this
     public float showDamageDuration = 0.1f; // # seconds to show damage
     public float powerUpDropChance = 1f; // Chance to drop a power-up
 
@@ -18,6 +19,8 @@ public class Enemy : MonoBehaviour {
     public bool showingDamage = false;
     public float damageDoneTime; // Time to stop showing damage
     public bool notifiedOfDestruction = false; // Will be used later
+ 
+
 
     protected BoundsCheck bndCheck;
 
@@ -52,7 +55,7 @@ public class Enemy : MonoBehaviour {
 
         if(showingDamage && Time.time > damageDoneTime)
         {
-            UnShowDamage();
+            //UnShowDamage();
         }
 
         if (bndCheck != null && bndCheck.offDown)
@@ -105,7 +108,6 @@ public class Enemy : MonoBehaviour {
                 print("Enemy hit by non-ProjectileHero: " + otherGO.name);
                 break;
         }
-    }
 
     void ShowDamage()
     {
@@ -125,4 +127,6 @@ public class Enemy : MonoBehaviour {
         }
         showingDamage = false;
     }
+
+}
 }

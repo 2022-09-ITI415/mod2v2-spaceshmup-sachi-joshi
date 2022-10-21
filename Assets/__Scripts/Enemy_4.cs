@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
+  
 
 /// <summary>
 /// Part is another serializable data storage class just like WeaponDefinition
@@ -200,4 +204,5 @@ public class Enemy_4 : Enemy {
                 break;
         }
     }
+
 }
